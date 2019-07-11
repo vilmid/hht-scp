@@ -1,0 +1,157 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "fileTypes": [
+        "scp"
+    ],
+    "name": "hht-scp",
+    "patterns": [
+        {
+            "begin": "^\\s*(Include)",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.include.hht-scp"
+                }
+            },
+            "end": "\\s+(\\\"[0-9a-zA-Z_./\\\\]*\\\")",
+            "endCaptures": {
+                "1": {
+                    "name": "string.quoted.double.hht-scp"
+                }
+            }
+        },
+        {
+            "include": "#builtins"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#storage"
+        },
+        {
+            "include": "#strings"
+        }
+    ],
+    "repository": {
+        "builtins": {
+            "patterns": [
+                {
+                    "match": "\\b(Delete|Find|Hex|isBoolean|isDigit|isInt|isString|Left|Length|Merge|Mid|Pack|PackBin|Rfind|Remove|Repeat|Right|Size|Split|toInt|Unpack|UnpackBin)\\b",
+                    "name": "support.function.hht-scp"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "begin": "/\\*",
+                    "captures": {
+                        "0": "name:punctuation.other.comment.hht-scp"
+                    },
+                    "end": "\\*/",
+                    "name": "comment.block.hht-scp"
+                },
+                {
+                    "begin": "//",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.other.comment.hht-scp"
+                        }
+                    },
+                    "end": "$",
+                    "name": "comment.line.double-slash.hht-scp"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "match": "\\b(true|false|nil)\\b",
+                    "name": "constant.language.hht-scp"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "match": "\\b(Case|Else|Fbreak|Fcontinue|For|If|Next|Return|Select|Step|Then|To|Wbreak|Wcontinue|Wend|While)\\b",
+                    "name": "keyword.control.hht-scp"
+                },
+                {
+                    "match": "\\b(Begin|Catch|End|Include|Method|Package|With)\\b",
+                    "name": "keyword.other.hht-scp"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "match": "\\b(([+-]?)([0-9]+\\.)?([0-9]+))\\b",
+                    "name": "constant.numeric.hht-scp"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "match": "(\\+|\\-|\\*|/|\\%|mod)",
+                    "name": "keyword.operator.arithmetic.hht-scp"
+                },
+                {
+                    "match": "(and|or|not)",
+                    "name": "keyword.operator.logical.hht-scp"
+                },
+                {
+                    "match": "(\\=\\=|\\<\\>|\\<|\\>|\\<\\=|\\>\\=|eq|ne|le|lt|ge|gt|is|weq)",
+                    "name": "keyword.operator.relation.hht-scp"
+                },
+                {
+                    "match": "\\=",
+                    "name": "keyword.operator.assignment.hht-scp"
+                }
+            ]
+        },
+        "storage": {
+            "patterns": [
+                {
+                    "match": "Const",
+                    "name": "storage.modifier.hht-scp"
+                }
+            ]
+        },
+        "strings": {
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.hht-scp"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.hht-scp"
+                }
+            },
+            "name": "string.quoted.double.hht-scp",
+            "patterns": [
+                {
+                    "match": "\\\\.",
+                    "name": "constant.character.escape.hht-scp"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.scp"
+}
