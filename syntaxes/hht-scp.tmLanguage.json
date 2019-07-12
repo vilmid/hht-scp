@@ -106,15 +106,15 @@
         "operators": {
             "patterns": [
                 {
-                    "match": "(\\+|\\-|\\*|/|\\%|mod)",
+                    "match": "\\b(\\+|\\-|\\*|/|\\%|mod)\\b",
                     "name": "keyword.operator.arithmetic.hht-scp"
                 },
                 {
-                    "match": "(and|or|not)",
+                    "match": "\\b(and|or|not)\\b",
                     "name": "keyword.operator.logical.hht-scp"
                 },
                 {
-                    "match": "(\\=\\=|\\<\\>|\\<|\\>|\\<\\=|\\>\\=|eq|ne|le|lt|ge|gt|is|weq)",
+                    "match": "\\b(\\=\\=|\\<\\>|\\<|\\>|\\<\\=|\\>\\=|eq|ne|le|lt|ge|gt|is|weq)\\b",
                     "name": "keyword.operator.relation.hht-scp"
                 },
                 {
