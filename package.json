@@ -1,0 +1,25 @@
+{
+    "name": "hht-scp",
+    "displayName": "hht-scp",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.49.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "hht-scp",
+            "aliases": ["hht-scp", "hht-scp"],
+            "extensions": [".scp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "hht-scp",
+            "scopeName": "source.scp",
+            "path": "./syntaxes/hht-scp.tmLanguage.json"
+        }]
+    }
+}
